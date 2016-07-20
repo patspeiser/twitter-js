@@ -3,6 +3,7 @@ var app = express();
 var chalk = require('chalk');
 var swig = require('swig');
 
+swig.setDefaults({ cache: false });
 app.engine('html', swig.renderFile)
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
@@ -17,7 +18,7 @@ app.get('/', function(req, res) {
 		var locals = {
     title: 'An Example',
     people: [
-        { name: 'Gandalf'},
+        { name: 'Gandalf IS A WIZARD!!!'},
         { name: 'Frodo' },
         { name: 'Hermione'}
     ]
